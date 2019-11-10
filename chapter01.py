@@ -70,3 +70,4 @@ print(students_dicts[2].get('student_detail',None).get('score1',None))
 
 # 이것으로 마무리?
 # 드디어 했다
+# 과연 되는 것인가?
