@@ -68,6 +68,26 @@ students_dicts = [
 print(students_dicts)
 print(students_dicts[2].get('student_detail',None).get('score1',None))
 
-# 이것으로 마무리?
-# 드디어 했다
-# 과연 되는 것인가?
+# class로 바꿔보지!
+# 구조 설계 후 재사용성 증가, 코드 반복 최소화, method 활용
+# 모든 class는 object를 상속!
+class Student(object):
+
+    def __init__(self,name,number,grade,details):
+        self._name = name
+        self._number = number
+        self._grade = grade
+        self._details = details
+    # class의 이름을 부른다면 __str__를 call한다.
+    def __str__(self):
+        return 'str : {}'.format(self._name)
+
+
+student1 = Student('kim',1,1,{'gender':'Female','score1': 59,'score2':88})
+student2 = Student('lee',2,2,{'gender':'Male','score1': 99,'score2':88})
+student3 = Student('park',4,4,{'gender':'Male','score1': 19,'score2':88})
+# python의 모든 객체는 이렇게 고유의 namespace를 가지고 있다.
+# dictionary기반의 namespace를 가지고 있다
+# constructor로 넘긴 parameter가 모두 나온다!
+print(student2.__dict__)
+
