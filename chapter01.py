@@ -1,5 +1,5 @@
 # class adnvaced!
-
+ 
 # 학생1
 student_name_1 = "kim"
 student_number_1 = 1
@@ -69,3 +69,4 @@ print(students_dicts)
 print(students_dicts[2].get('student_detail',None).get('score1',None))
 
 # 이것으로 마무리?
+# 드디어 했다
