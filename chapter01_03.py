@@ -64,63 +64,63 @@ class Student(object):
         else:
             return "Sorry"
 
+if __name__ == '__main__':
+
+    student_1 = Student(1,"kim","sarang","student1@naver.com",'1',400,3.5)
+    student_2 = Student(2,"lee","Myongho","student2@daum.net",'2',500,4.3)
+
+    # print(student_1)
+    # print(student_2)
+
+    # print(end='\n\n\n')
+
+    # print(student_1.detail_info())
+    # print(student_2.detail_info())
+
+    # 학비 정보
+    # print(student_1.get_fee())
+    # print(student_2.get_fee())
+
+    #class method 미사용
+    # class variable을 직접 접근하는 것은 지양해야 한다.
+    # Student.tuition_per = 1.4
 
 
-student_1 = Student(1,"kim","sarang","student1@naver.com",'1',400,3.5)
-student_2 = Student(2,"lee","Myongho","student2@daum.net",'2',500,4.3)
+    # print(student_1.get_fee_calc())
+    # print(student_2.get_fee_calc())
 
-# print(student_1)
-# print(student_2)
+    Student.raise_fee(1.5)
 
-# print(end='\n\n\n')
+    # print(student_1.get_fee_calc())
+    # print(student_2.get_fee_calc())
 
-# print(student_1.detail_info())
-# print(student_2.detail_info())
+    # class method
+    student_3 = Student.student_const(3,'Park','minji','student3@gmail.com','3',550,4.5)
+    student_4 = Student.student_const(4,'Cho','sunghan','student3@gmail.com','4',600,4.1)
 
-# 학비 정보
-# print(student_1.get_fee())
-# print(student_2.get_fee())
+    # # 전체 정보
+    # print(student_3.detail_info())
+    # print(student_4.detail_info())
 
-#class method 미사용
-# class variable을 직접 접근하는 것은 지양해야 한다.
-# Student.tuition_per = 1.4
+    # #학생 학비 변경
+    # print(student_3._tuition)
+    # print(student_4._tuition)
 
+    # static method!
+    # 클래스 안에서 분류를 원할 때, 학점을 기준으로 장학금 대상자인지 아닌지 파악하기 위함이다.
+    # parameter가 반드시 Student instance여야 한다
+    def is_scholarship(inst):
+        if inst._gpa >= 4.3:
+            return "{} is a scholoarship recipient".format(inst._last_name)
+        else:
+            return "Sorry"
 
-# print(student_1.get_fee_calc())
-# print(student_2.get_fee_calc())
-
-Student.raise_fee(1.5)
-
-# print(student_1.get_fee_calc())
-# print(student_2.get_fee_calc())
-
-# class method
-student_3 = Student.student_const(3,'Park','minji','student3@gmail.com','3',550,4.5)
-student_4 = Student.student_const(4,'Cho','sunghan','student3@gmail.com','4',600,4.1)
-
-# # 전체 정보
-# print(student_3.detail_info())
-# print(student_4.detail_info())
-
-# #학생 학비 변경
-# print(student_3._tuition)
-# print(student_4._tuition)
-
-# static method!
-# 클래스 안에서 분류를 원할 때, 학점을 기준으로 장학금 대상자인지 아닌지 파악하기 위함이다.
-# parameter가 반드시 Student instance여야 한다
-def is_scholarship(inst):
-    if inst._gpa >= 4.3:
-        return "{} is a scholoarship recipient".format(inst._last_name)
-    else:
-        return "Sorry"
-
-print(Student.is_scholarship_st(student_1))
-print(Student.is_scholarship_st(student_2))
-print(Student.is_scholarship_st(student_3))
-print(Student.is_scholarship_st(student_4))
-print(end='\n\n\n')
-print(student_1.is_scholarship_st(student_1))
-print(student_2.is_scholarship_st(student_2))
-print(student_3.is_scholarship_st(student_3))
-print(student_4.is_scholarship_st(student_4))
+    print(Student.is_scholarship_st(student_1))
+    print(Student.is_scholarship_st(student_2))
+    print(Student.is_scholarship_st(student_3))
+    print(Student.is_scholarship_st(student_4))
+    print(end='\n\n\n')
+    print(student_1.is_scholarship_st(student_1))
+    print(student_2.is_scholarship_st(student_2))
+    print(student_3.is_scholarship_st(student_3))
+    print(student_4.is_scholarship_st(student_4))
