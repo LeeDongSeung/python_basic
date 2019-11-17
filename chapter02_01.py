@@ -87,7 +87,6 @@ print(end = '\n\n\n')
 # list comprehension!
 # 반 20명, 4개반 (A,B,C,D)
 Classes = namedtuple('Classes',['rank','number'])
-
 # group list
 numbers = [str(x) for x in range(1,21)]
 # numbers = []
